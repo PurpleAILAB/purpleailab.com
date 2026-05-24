@@ -4,4 +4,3 @@ data/
 *.db
 dist/
 .DS_Store
-bun.lock
