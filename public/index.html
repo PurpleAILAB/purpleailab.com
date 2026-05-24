@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PurpleAILAB — Agentic Cybersecurity Harness</title>
+  <meta name="description" content="An autonomous red team with the harness to match. 16 specialist agents, full kill chain, 98.1% benchmark score. Open source. Model-agnostic.">
+  <meta property="og:title" content="PurpleAILAB — Agentic Cybersecurity Harness">
+  <meta property="og:description" content="Autonomous Red Team platform. 16 specialist agents. 98.1% XBOW benchmark. Full kill-chain simulation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/logo-64.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
+  <link rel="apple-touch-icon" href="assets/logo-192.png">
+  <meta property="og:image" content="assets/logo-512.png">
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo-64.png" width="24" height="24" alt="PurpleAILAB" class="nav-logo-img">
+        <span>Purple<b>AI</b>LAB</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#capabilities">CAPABILITIES</a>
+        <a href="#agents">AGENTS</a>
+        <a href="#team">TEAM</a>
+        <a href="#pricing">PRICING</a>
+      </nav>
+      <div class="nav-right">
+        <a href="https://github.com/PurpleAILAB/Decepticon" class="nav-ext" target="_blank" rel="noopener">GITHUB ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="split hero-split">
+        <div class="split-left">
+          <p class="section-label"><span class="section-num">§ 01</span> PURPLE AI LAB · THE HARNESS</p>
+          <h1>An autonomous<br>red team<br><em>with the harness</em><br><em>to match.</em></h1>
+          <p class="hero-desc">The autonomous red team platform that immunises your defence against AI-driven attacks. 16 specialist agents, full kill chain, <strong>98.1% benchmark</strong>. Open source. Model-agnostic. <strong>Blue + Red = Purple.</strong></p>
+          <div class="install-tabs">
+            <button class="install-tab active" data-target="docker">DOCKER</button>
+            <button class="install-tab" data-target="pip">PIP</button>
+          </div>
+          <div class="install-box">
+            <span class="install-prompt">$</span>
+            <code id="install-cmd">curl -fsSL https://decepticon.red/install | bash</code>
+            <button class="install-copy" aria-label="Copy">COPY</button>
+          </div>
+          <p class="hero-meta">Apache 2.0 · Docker · macOS · Linux · WSL2 · <a href="https://github.com/PurpleAILAB/Decepticon" target="_blank" rel="noopener">read the source ↗</a></p>
+          <form class="hero-waitlist" id="hero-waitlist-form">
+            <input type="email" name="email" placeholder="your@email.com" required>
+            <button type="submit" class="btn btn-accent">Join Waitlist</button>
+          </form>
+          <p class="form-status" id="hero-waitlist-status"></p>
+        </div>
+        <div class="split-right hero-mark-area">
+          <img src="assets/logo-512.png" alt="PurpleAILAB" class="hero-mark" width="280" height="280">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <div class="stat-bar">
+    <div class="container">
+      <div class="stat-row">
+        <div class="stat-badge"><span class="stat-val">4K+</span><span class="stat-key">stars</span></div>
+        <div class="stat-badge"><span class="stat-val">16</span><span class="stat-key">agents</span></div>
+        <div class="stat-badge"><span class="stat-val">10+</span><span class="stat-key">providers</span></div>
+        <div class="stat-badge"><span class="stat-val">50K+</span><span class="stat-key">downloads</span></div>
+        <div class="stat-badge"><span class="stat-val">98.1%</span><span class="stat-key">XBOW score</span></div>
+        <div class="stat-badge"><span class="stat-val">1K+</span><span class="stat-key">waitlist</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ BENCHMARK ═══ -->
+  <section id="benchmark" class="section">
+    <div class="container">
+      <hr class="hairline">
+      <div class="split">
+        <div class="split-left">
+          <p class="section-label"><span class="section-num">§ 02</span> EVERY CHAIN, BENCHMAXXED</p>
+          <h2 class="display">Every attack chain,<br><em>benchmaxxed.</em></h2>
+          <p>102 of 104 targets on the independent XBOW benchmark. Real exploitation — not scanning. The only open-source agent in the top tier.</p>
+        </div>
+        <div class="split-right">
+          <div class="terminal" data-animate>
+            <div class="terminal-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="terminal-title">DECEPTICON · XBOW BENCHMARK</span></div>
+            <div class="terminal-body">
+              <div class="tl" style="--d:0"><span class="t-muted">XBOW Benchmark — Decepticon v1.1.1</span></div>
+              <div class="tl" style="--d:1"><span class="t-muted">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span></div>
+              <div class="tl" style="--d:2"><span class="t-blue">Easy  </span> <span class="t-bar">████████████████████████████</span> <span class="t-green">45/45</span>  100%</div>
+              <div class="tl" style="--d:3"><span class="t-purple">Medium</span> <span class="t-bar">███████████████████████████▌</span> <span class="t-green">50/51</span>  98.0%</div>
+              <div class="tl" style="--d:4"><span class="t-red">Hard  </span> <span class="t-bar">████████████████████████▌</span>   <span class="t-yellow"> 7/8 </span>  87.5%</div>
+              <div class="tl" style="--d:5"><span class="t-muted">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span></div>
+              <div class="tl" style="--d:6"><span class="t-bold">Total</span>                                <span class="t-accent">102/104</span> <span class="t-bold">98.1%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CAPABILITIES HEADING ═══ -->
+  <section id="capabilities" class="section">
+    <div class="container">
+      <hr class="hairline">
+      <div class="split">
+        <div class="split-left">
+          <p class="section-label"><span class="section-num">§ 03</span> ADDITIONS OVER PENTEST TOOLS</p>
+          <h2 class="display">Built to break things.<br><em>Properly.</em></h2>
+        </div>
+        <div class="split-right">
+          <p>Brain, body, memory, execution, governance — five layers, each modular and swappable. Originally conceived in 2021 as a purple-team AI, Decepticon adds the harness that makes autonomous offense safe and operational.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES (§ 01–08) ═══ -->
+  <section class="section features-section">
+    <div class="container">
+
+      <!-- 01 Kill Chain -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 01</span><span class="feature-tag">KILL CHAIN</span></div>
+          <div class="feature-main">
+            <h3>Autonomous attack lifecycle</h3>
+            <p>Recon → exploit → privesc → lateral movement → C2 → persistence. The full chain runs inside an isolated sandbox, the way a real adversary operates — not the way a scanner does. Before a single packet leaves the wire, Decepticon generates a complete engagement package.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">PHASES</span><span class="spec-v">6 kill-chain stages</span></div>
+            <div class="spec"><span class="spec-k">AGENTS</span><span class="spec-v">16 specialists</span></div>
+            <div class="spec"><span class="spec-k">SANDBOX</span><span class="spec-v">Kali Linux · dual network</span></div>
+            <div class="spec"><span class="spec-k">C2</span><span class="spec-v">Sliver · Metasploit · tmux</span></div>
+          </div>
+        </div>
+        <div class="terminal" data-animate>
+          <div class="terminal-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="terminal-title">DECEPTICON · KILL CHAIN</span></div>
+          <div class="terminal-body">
+            <div class="tl" style="--d:0"><span class="t-muted">$</span> decepticon engage lab-internal-01</div>
+            <div class="tl" style="--d:1"><span class="t-purple">[Decepticon]</span> Loading engagement: lab-internal-01</div>
+            <div class="tl" style="--d:2"><span class="t-purple">[Decepticon]</span> OPPLAN loaded — 6 objectives</div>
+            <div class="tl" style="--d:3"><span class="t-blue">[Recon]     </span> Scanning 10.0.1.0/24 ...</div>
+            <div class="tl" style="--d:4"><span class="t-blue">[Recon]     </span> Found: 10.0.1.15 — Apache/2.4.49 <span class="t-yellow">(CVE-2021-41773)</span></div>
+            <div class="tl" style="--d:5"><span class="t-red">[Exploit]   </span> Exploiting path traversal on 10.0.1.15:443</div>
+            <div class="tl" style="--d:6"><span class="t-red">[Exploit]   </span> <span class="t-green">✓ Shell obtained</span> — www-data@target-web</div>
+            <div class="tl" style="--d:7"><span class="t-red">[PostExploit]</span> Escalating privileges ...</div>
+            <div class="tl" style="--d:8"><span class="t-red">[PostExploit]</span> <span class="t-green">✓ root</span> via sudo misconfiguration</div>
+            <div class="tl" style="--d:9"><span class="t-purple">[Decepticon]</span> Objective 1 → <span class="t-green">PASSED</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 Multi-Agent -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 02</span><span class="feature-tag">MULTI-AGENT</span></div>
+          <div class="feature-main">
+            <h3>16 specialists, fresh context per objective</h3>
+            <p>Each agent starts with a clean context window — no accumulated noise, no token bloat. The orchestrator picks the next objective, spawns a specialist with exactly what it needs, and collects a PASSED or BLOCKED signal. Findings persist to disk and the knowledge graph, not agent memory.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">ORCHESTRATORS</span><span class="spec-v">Decepticon · Vulnresearch · Soundwave</span></div>
+            <div class="spec"><span class="spec-k">CONTEXT</span><span class="spec-v">fresh per objective</span></div>
+            <div class="spec"><span class="spec-k">PIPELINE</span><span class="spec-v">Scanner → Detector → Verifier → Exploiter → Patcher</span></div>
+            <div class="spec"><span class="spec-k">STATE</span><span class="spec-v">disk + knowledge graph</span></div>
+          </div>
+        </div>
+        <div class="terminal" data-animate>
+          <div class="terminal-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="terminal-title">DECEPTICON · OPPLAN STATUS</span></div>
+          <div class="terminal-body">
+            <div class="tl" style="--d:0"><span class="t-muted">┌─ Engagement: lab-internal-01 ──────────────────────┐</span></div>
+            <div class="tl" style="--d:1"><span class="t-muted">│</span> Objective 1   Recon          <span class="t-green">✓ PASSED</span>          <span class="t-muted">│</span></div>
+            <div class="tl" style="--d:2"><span class="t-muted">│</span> Objective 2   Initial Access <span class="t-green">✓ PASSED</span>          <span class="t-muted">│</span></div>
+            <div class="tl" style="--d:3"><span class="t-muted">│</span> Objective 3   Priv Escalation<span class="t-green"> ✓ PASSED</span>          <span class="t-muted">│</span></div>
+            <div class="tl" style="--d:4"><span class="t-muted">│</span> Objective 4   Lateral Move   <span class="t-yellow">→ IN PROGRESS</span>     <span class="t-muted">│</span></div>
+            <div class="tl" style="--d:5"><span class="t-muted">│</span> Objective 5   Persistence    <span class="t-muted">○ PENDING</span>         <span class="t-muted">│</span></div>
+            <div class="tl" style="--d:6"><span class="t-muted">│</span> Objective 6   Exfiltration   <span class="t-muted">○ PENDING</span>         <span class="t-muted">│</span></div>
+            <div class="tl" style="--d:7"><span class="t-muted">└────────────────────────────────────────────────────┘</span></div>
+            <div class="tl" style="--d:8"><span class="t-accent">Knowledge Graph:</span> 47 nodes · 93 edges · 12 skills learned</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 Knowledge Graph -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 03</span><span class="feature-tag">KNOWLEDGE</span></div>
+          <div class="feature-main">
+            <h3>Collective learning across engagements</h3>
+            <p>Neo4j knowledge graph stores learned attack patterns and reuses them as skills. Each engagement makes the next one smarter. The graph survives across sessions — collective intelligence that grows with every operation.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">BACKEND</span><span class="spec-v">Neo4j</span></div>
+            <div class="spec"><span class="spec-k">NETWORK</span><span class="spec-v">dual-homed (sandbox + mgmt)</span></div>
+            <div class="spec"><span class="spec-k">SKILLS</span><span class="spec-v">auto-generated from findings</span></div>
+            <div class="spec"><span class="spec-k">PERSISTENCE</span><span class="spec-v">cross-engagement</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 Sandbox -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 04</span><span class="feature-tag">SANDBOX</span></div>
+          <div class="feature-main">
+            <h3>Isolated execution, real results</h3>
+            <p>Kali Linux sandbox with a two-network design. sandbox-net for operations, decepticon-net for management. Real tools — nmap, msfconsole, evil-winrm — running inside persistent tmux sessions with automatic prompt detection. Interactive shells, actually.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">BASE</span><span class="spec-v">Kali Linux</span></div>
+            <div class="spec"><span class="spec-k">NETWORKS</span><span class="spec-v">sandbox-net · decepticon-net</span></div>
+            <div class="spec"><span class="spec-k">SESSIONS</span><span class="spec-v">persistent tmux · prompt detection</span></div>
+            <div class="spec"><span class="spec-k">ISOLATION</span><span class="spec-v">Docker · dual NIC</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 Governance -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 05</span><span class="feature-tag">GOVERNANCE</span></div>
+          <div class="feature-main">
+            <h3>OPPLAN control, automatically enforced</h3>
+            <p>Like a self-driving car — AI handles execution, but the human is always in control. RoE, ConOps, OPPLAN with MITRE ATT&CK mapping are generated before the first packet and enforced automatically. Pause, redirect, or override any decision in real-time.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">DOCUMENTS</span><span class="spec-v">RoE · ConOps · OPPLAN · Deconfliction</span></div>
+            <div class="spec"><span class="spec-k">MAPPING</span><span class="spec-v">MITRE ATT&CK</span></div>
+            <div class="spec"><span class="spec-k">OVERRIDE</span><span class="spec-v">real-time human authority</span></div>
+            <div class="spec"><span class="spec-k">PLANNER</span><span class="spec-v">Soundwave agent</span></div>
+          </div>
+        </div>
+        <div class="terminal" data-animate>
+          <div class="terminal-chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="terminal-title">SOUNDWAVE · ENGAGEMENT PLANNER</span></div>
+          <div class="terminal-body">
+            <div class="tl" style="--d:0"><span class="t-purple">[Soundwave]</span> Generating engagement bundle ...</div>
+            <div class="tl" style="--d:1">  <span class="t-green">✓</span> Rules of Engagement          <span class="t-muted">workspace/roe.md</span></div>
+            <div class="tl" style="--d:2">  <span class="t-green">✓</span> Threat Profile                <span class="t-muted">workspace/threat.md</span></div>
+            <div class="tl" style="--d:3">  <span class="t-green">✓</span> Concept of Operations         <span class="t-muted">workspace/conops.md</span></div>
+            <div class="tl" style="--d:4">  <span class="t-green">✓</span> Deconfliction Plan            <span class="t-muted">workspace/deconflict.md</span></div>
+            <div class="tl" style="--d:5">  <span class="t-green">✓</span> OPPLAN (6 objectives)         <span class="t-muted">workspace/opplan.md</span></div>
+            <div class="tl" style="--d:6"><span class="t-purple">[Soundwave]</span> Engagement bundle ready. Handoff → <span class="t-accent">Decepticon</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06 Offensive Vaccine -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 06</span><span class="feature-tag">VACCINE</span></div>
+          <div class="feature-main">
+            <h3>Offense serves defense</h3>
+            <p>The Offensive Vaccine loop turns red team findings into blue team improvements through an attack → defend → verify cycle. Offensive AI is the starting point, not the destination. Deploy an AI red team against your own infrastructure. Find the blind spots before real attackers do.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">LOOP</span><span class="spec-v">attack → defend → verify</span></div>
+            <div class="spec"><span class="spec-k">OUTPUT</span><span class="spec-v">detection rules · patch code</span></div>
+            <div class="spec"><span class="spec-k">PIPELINE</span><span class="spec-v">Exploiter → Patcher</span></div>
+            <div class="spec"><span class="spec-k">BLUE TEAM</span><span class="spec-v">SOC-calibrated validation</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 07 Model-Agnostic -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 07</span><span class="feature-tag">MODELS</span></div>
+          <div class="feature-main">
+            <h3>10 providers, freely swappable</h3>
+            <p>No lock-in. Anthropic, OpenAI, Gemini, DeepSeek, xAI, Mistral, and local LLM via Ollama. OAuth subscription support for Claude Max, ChatGPT Pro, Gemini Advanced. Tier-based profiles — eco for production, max for high-value targets, test for CI.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">PROVIDERS</span><span class="spec-v">10+ (Anthropic · OpenAI · Gemini · …)</span></div>
+            <div class="spec"><span class="spec-k">LOCAL</span><span class="spec-v">Ollama</span></div>
+            <div class="spec"><span class="spec-k">PROFILES</span><span class="spec-v">eco · max · test</span></div>
+            <div class="spec"><span class="spec-k">OAUTH</span><span class="spec-v">Claude Max · ChatGPT Pro · Gemini Adv</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 08 Middleware -->
+      <article class="feature">
+        <hr class="hairline">
+        <div class="feature-head">
+          <div class="feature-label"><span class="section-num">§ 08</span><span class="feature-tag">MIDDLEWARE</span></div>
+          <div class="feature-main">
+            <h3>Configurable stack per agent role</h3>
+            <p>Each agent runs with a middleware pipeline — engagement context injection, skill loading, filesystem access, sub-agent dispatch, OPPLAN management, model fallback, summarization, and prompt caching. The stack varies by role: orchestrators get the full chain, specialists get what they need.</p>
+          </div>
+          <div class="feature-specs">
+            <div class="spec"><span class="spec-k">LAYERS</span><span class="spec-v">9 middleware modules</span></div>
+            <div class="spec"><span class="spec-k">FALLBACK</span><span class="spec-v">auto model switch on error</span></div>
+            <div class="spec"><span class="spec-k">CACHING</span><span class="spec-v">Anthropic prompt caching</span></div>
+            <div class="spec"><span class="spec-k">COMPACTION</span><span class="spec-v">auto-summarize on context overflow</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══ AGENTS REFERENCE ═══ -->
+  <section id="agents" class="section">
+    <div class="container">
+      <hr class="hairline">
+      <div class="split">
+        <div class="split-left">
+          <h2 class="display">16 agents.<br><em>One kill chain.</em></h2>
+        </div>
+        <div class="split-right">
+          <p>Organized by phase. Every specialist starts with a fresh context window per objective. Findings persist to disk and the knowledge graph.</p>
+        </div>
+      </div>
+      <div class="agents-ref">
+        <div class="agent-group">
+          <h4>Orchestrators</h4>
+          <div class="agent-row"><span class="agent-name">Decepticon</span><span class="agent-desc">Main red-team orchestrator · dispatches specialists</span></div>
+          <div class="agent-row"><span class="agent-name">Vulnresearch</span><span class="agent-desc">Vulnerability research pipeline orchestrator</span></div>
+          <div class="agent-row"><span class="agent-name">Soundwave</span><span class="agent-desc">Engagement planner · writes the 8-doc bundle</span></div>
+        </div>
+        <div class="agent-group">
+          <h4>Recon &amp; Research</h4>
+          <div class="agent-row"><span class="agent-name">Recon</span><span class="agent-desc">Port scanning · service enumeration · DNS · OSINT</span></div>
+          <div class="agent-row"><span class="agent-name">Scanner</span><span class="agent-desc">Vulnerability candidates with CVE/CVSS</span></div>
+          <div class="agent-row"><span class="agent-name">Detector</span><span class="agent-desc">Confidence-rated findings · detection rules</span></div>
+          <div class="agent-row"><span class="agent-name">Verifier</span><span class="agent-desc">2+ methods for CRITICAL/HIGH confirmation</span></div>
+        </div>
+        <div class="agent-group">
+          <h4>Exploitation</h4>
+          <div class="agent-row"><span class="agent-name">Exploit</span><span class="agent-desc">Initial access — SQLi · SSTI · Kerberoasting · ADCS</span></div>
+          <div class="agent-row"><span class="agent-name">Post-Exploit</span><span class="agent-desc">Privesc · lateral movement · credential harvest · persistence</span></div>
+          <div class="agent-row"><span class="agent-name">Exploiter</span><span class="agent-desc">Working proof-of-concept generation</span></div>
+          <div class="agent-row"><span class="agent-name">Patcher</span><span class="agent-desc">Patch code or configuration fix</span></div>
+        </div>
+        <div class="agent-group">
+          <h4>Domain Specialists</h4>
+          <div class="agent-row"><span class="agent-name">AD Operator</span><span class="agent-desc">Active Directory — Kerberoasting · ADCS ESC1-15 · DCSync</span></div>
+          <div class="agent-row"><span class="agent-name">Cloud Hunter</span><span class="agent-desc">IAM escalation · S3 exposure · K8s RBAC · metadata abuse</span></div>
+          <div class="agent-row"><span class="agent-name">Contract Auditor</span><span class="agent-desc">Solidity/EVM — reentrancy · oracle · flash loan · access</span></div>
+          <div class="agent-row"><span class="agent-name">Reverser</span><span class="agent-desc">ELF/PE/Mach-O · packer detection · ROP gadgets · Ghidra</span></div>
+          <div class="agent-row"><span class="agent-name">Analyst</span><span class="agent-desc">Source review · semgrep · bandit · gitleaks · CVE sweeps</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMPETITIVE LANDSCAPE ═══ -->
+  <section class="section">
+    <div class="container">
+      <hr class="hairline">
+      <div class="split">
+        <div class="split-left">
+          <h2 class="display">The gap no one<br><em>else fills.</em></h2>
+        </div>
+        <div class="split-right">
+          <p>The market has three heavy players — all privately funded, all closed, all enterprise-only. Decepticon's wedge is full kill-chain APT simulation, open source, model-agnostic, and accessible to SMBs, startups, and defence.</p>
+        </div>
+      </div>
+      <div class="comp-grid">
+        <div class="comp-card">
+          <h4>XBOW</h4>
+          <p class="comp-stat">$272M raised · unicorn</p>
+          <p>Web-app scanning. Closed source. Min ~$86K/yr.</p>
+        </div>
+        <div class="comp-card">
+          <h4>Horizon3.ai</h4>
+          <p class="comp-stat">$186M raised · 5,200+ customers</p>
+          <p>NodeZero. Enterprise-only. 102% YoY ARR growth.</p>
+        </div>
+        <div class="comp-card">
+          <h4>Pentera</h4>
+          <p class="comp-stat">$250M raised · $100M+ ARR</p>
+          <p>Traditional automated pentest. Enterprise focus.</p>
+        </div>
+        <div class="comp-card comp-card-accent">
+          <h4>Decepticon</h4>
+          <p class="comp-stat">Open Source · Apache 2.0</p>
+          <p>Full kill chain. Model-agnostic. SMB to defence. 98.1% XBOW.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEAM ═══ -->
+  <section id="team" class="section">
+    <div class="container">
+      <hr class="hairline">
+      <div class="split">
+        <div class="split-left">
+          <h2 class="display">Three continents.<br><em>One mission.</em></h2>
+        </div>
+        <div class="split-right">
+          <p>Cyber warfare, AI safety, and operational SOC experience. South Korea for technology, Washington D.C. for business and policy, Norway for European defence.</p>
+        </div>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">MC</div>
+          <h4>Minseok Choi</h4>
+          <p class="team-role">CEO &amp; CTO · Co-Founder</p>
+          <p class="team-bio">South Korea Marine Corps, UAV intelligence. Global ethical hacker, 10+ years. KISA BoB. Grand prix &amp; minister's award. Leads Decepticon's technology development.</p>
+          <div class="team-meta">
+            <span>South Korea</span>
+            <a href="https://www.linkedin.com/in/minseokchoi917/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">LK</div>
+          <h4>Lauren Kim</h4>
+          <p class="team-role">CSO &amp; COO · Co-Founder</p>
+          <p class="team-bio">UW — international security. Co-founder, US energy-security startup. Prior OpenAI &amp; Google (Bard/Gemini) on AI safety evaluation. Leads business strategy &amp; operations.</p>
+          <div class="team-meta">
+            <span>Washington D.C.</span>
+            <a href="https://www.linkedin.com/in/laurenminkim/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">MH</div>
+          <h4>Markus Halvorsen</h4>
+          <p class="team-role">Founding Member · SOC Analyst</p>
+          <p class="team-bio">Norwegian SOC analyst — detection, IR, threat hunting. Brings blue-team reality into Decepticon. Calibrates the platform against how a SOC actually operates.</p>
+          <div class="team-meta">
+            <span>Norway</span>
+            <a href="https://www.linkedin.com/in/markus-halvorsen/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <hr class="hairline">
+      <div class="split">
+        <div class="split-left">
+          <h2 class="display">Start free.<br><em>Scale when ready.</em></h2>
+        </div>
+        <div class="split-right">
+          <p>Open-source first. Commercial tiers for teams that need managed infrastructure, priority routing, and SLAs.</p>
+        </div>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h4>Community</h4>
+          <div class="pricing-amount">Free<span class="pricing-period"> forever</span></div>
+          <ul>
+            <li>Full open-source platform</li>
+            <li>Self-hosted deployment</li>
+            <li>All 16 agents</li>
+            <li>Community support</li>
+            <li>Apache 2.0 license</li>
+          </ul>
+          <a href="https://github.com/PurpleAILAB/Decepticon" target="_blank" rel="noopener" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="pricing-card pricing-card-accent">
+          <span class="pricing-badge">MOST POPULAR</span>
+          <h4>Pro</h4>
+          <div class="pricing-amount"><span class="pricing-currency">$</span>199<span class="pricing-period">/month</span></div>
+          <ul>
+            <li>Everything in Community</li>
+            <li>Managed cloud infrastructure</li>
+            <li>Priority model routing</li>
+            <li>Advanced reporting</li>
+            <li>Email support</li>
+            <li>Usage-based API access</li>
+          </ul>
+          <a href="#cta" class="btn btn-accent">Join Waitlist</a>
+        </div>
+        <div class="pricing-card">
+          <h4>Max</h4>
+          <div class="pricing-amount"><span class="pricing-currency">$</span>499<span class="pricing-period">/month</span></div>
+          <ul>
+            <li>Everything in Pro</li>
+            <li>Dedicated sandboxes</li>
+            <li>Knowledge graph persistence</li>
+            <li>Custom agent configs</li>
+            <li>Priority SLA</li>
+            <li>Team collaboration</li>
+          </ul>
+          <a href="#cta" class="btn btn-accent">Join Waitlist</a>
+        </div>
+      </div>
+      <p class="pricing-note">MSSP / Enterprise → <a href="mailto:info@decepticon.red">contact us</a> for custom pricing.</p>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section id="cta" class="section cta-section">
+    <div class="container">
+      <hr class="hairline">
+      <h2 class="display cta-display">A harness worth keeping<br><em>is one you don't outgrow.</em></h2>
+      <p class="cta-desc">Join 1,000+ security professionals on the waitlist. Deploy an AI red team against your own infrastructure. Find the blind spots before real attackers do.</p>
+      <div class="install-tabs">
+        <button class="install-tab active" data-target="docker">DOCKER</button>
+        <button class="install-tab" data-target="pip">PIP</button>
+      </div>
+      <div class="install-box">
+        <span class="install-prompt">$</span>
+        <code class="install-cmd-cta">curl -fsSL https://decepticon.red/install | bash</code>
+        <button class="install-copy" aria-label="Copy">COPY</button>
+      </div>
+      <p class="hero-meta cta-meta">Apache 2.0 · Docker · macOS · Linux · WSL2 · <a href="https://github.com/PurpleAILAB/Decepticon" target="_blank" rel="noopener">read the source ↗</a></p>
+      <form class="cta-form" id="waitlist-form">
+        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="btn btn-accent">Join Waitlist</button>
+      </form>
+      <p class="form-status" id="waitlist-status"></p>
+      <div class="cta-links">
+        <a href="https://discord.gg/TZUYsZgrRG" target="_blank" rel="noopener">Discord</a>
+        <a href="https://github.com/PurpleAILAB/Decepticon" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:info@decepticon.red">info@decepticon.red</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <span>© 2026 Purple AI LAB AS</span>
+        <span>Apache 2.0</span>
+        <span>South Korea · Washington D.C. · Norway</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
